@@ -16,7 +16,7 @@ numero_uno:int = 34
 numero_due:int = 23
 numero_tre:int = 65
 media:int =(numero_uno + numero_due + numero_tre)/3 
-print(media)
+print(f"La media è {media}")
 
 print("2 \n0 \n2 \n5")
 
@@ -25,7 +25,7 @@ Fahrenheit = 74
 
 Celsius = 5 * (Fahrenheit - 32) / 9
 
-print(Celsius)
+print(f"La temperatura è di {Celsius} gradi Celsius")
 
 
 
@@ -61,6 +61,6 @@ totale += ordine["Cotoletta"]
 totale += ordine["Patatine Fritte"]
 totale += ordine["Acqua"]
 totale += ordine["Tiramisu"]
-print(totale, "Euro")
+print(f"il totale è di {totale} Euro")
 
 
