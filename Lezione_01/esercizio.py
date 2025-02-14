@@ -29,7 +29,7 @@ print(Celsius)
 
 
 
-menu = {
+menu:dict = {
     "Pizza" : 9.00, 
     "Pasta" : 10.50,
     "Zuppa" : 7.00,
@@ -47,13 +47,13 @@ menu = {
     
 }
 
-ordine = {
-    "Pasta": 10.50,
-    "Cotoletta": 10.00,
-    "Patatine Fritte": 5.50,
-    "Acqua": 1.50,
-    "Tiramisu": 6.00
-}
+ordine:dict ={} 
+ordine["Pasta"]=9.00 
+ordine["Cotoletta"] = 10.00
+ordine["Patatine Fritte"] = 5.50
+ordine["Acqua"] = 1.50
+ordine["Tiramisu"] = 6.00
+
 
 totale = 0
 totale += ordine["Pasta"]
