@@ -1,0 +1,1 @@
+print("Alber Einstein once said: Try to become not a man of success but rather a man of value.")
