@@ -3,6 +3,7 @@ x:float = 5.0
 y:float = 1.0 / x
 print(x,y)
 print(x*y)
+print(x-y)
 
 #esercizio 2
 
@@ -19,10 +20,12 @@ numero_due:int = 23
 numero_tre:int = 65
 media:int =(numero_uno + numero_due + numero_tre)/3 
 print(f"La media è {media}")
+#esercizio 4
+
 
 print("2 \n0 \n2 \n5")
 
-#esercizio 4
+#esercizio 5
 
 Fahrenheit = 74
 
@@ -30,7 +33,7 @@ Celsius = 5 * (Fahrenheit - 32) / 9
 
 print(f"La temperatura è di {Celsius} gradi Celsius")
 
-#esercizio 5
+#esercizio 6
 
 menu:dict = {
     "Pizza" : 9.00, 
