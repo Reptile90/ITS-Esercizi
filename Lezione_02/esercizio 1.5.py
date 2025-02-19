@@ -10,8 +10,8 @@ Un possibile esempio di output potrebbe essere il seguente:
 
 72 gradi Fahrenheit corrispondono a 22.2 gradi Celsius.'''
 
-Fahrenheit = 74
+Fahrenheit = 72
 
 Celsius = 5 * (Fahrenheit - 32) / 9
 
-print(f"La temperatura è di {Celsius} gradi Celsius")
+print(f"La temperatura è di {Celsius:.1f} gradi Celsius")
