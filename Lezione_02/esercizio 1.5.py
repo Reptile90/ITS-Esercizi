@@ -14,4 +14,4 @@ Fahrenheit = 72
 
 Celsius = 5 * (Fahrenheit - 32) / 9
 
-print(f"La temperatura è di {Celsius:.1f} gradi Celsius")
+print(f"La temperatura {Fahrenheit} Farenheit è corrispondente a {Celsius:.1f} gradi Celsius")
