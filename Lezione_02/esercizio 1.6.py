@@ -68,6 +68,7 @@ totale += ordine["Cotoletta"]
 totale += ordine["Patatine Fritte"]
 totale += ordine["Acqua"]
 totale += ordine["Tiramisu"]
+print(f"Il tuo ordine è: {ordine}")
 print(f"il totale è di {totale} Euro")
 
 
