@@ -2,5 +2,11 @@
 
 friends_name =["Lorenzo", "Patrick", "Giuseppe", "Andrea", "Gabriele", "Francesco", "Demis", "Marcel"] 
 
-for name in friends_name:
- print(name)
+print(friends_name[0])
+print(friends_name[1])
+print(friends_name[2])
+print(friends_name[3])
+print(friends_name[4])
+print(friends_name[5])
+print(friends_name[6])
+print(friends_name[7])
