@@ -36,9 +36,8 @@ print(f"Dear {guest_list[3]}, i would be honored to have you join me for a dinne
 
 print("\nUnfortunately, the new dinner table won't arrive in time, and I can invite only two people to dinner.\n")
 
-while len(guest_list) > 2:
-    removed_guest = guest_list.pop()
-    print(f"Sorry, {removed_guest}, but I can't invite you to dinner.")
+guest_list.pop(3)
+guest_list.pop(2)
 
 print(f"Dear {guest_list[0]}, i would be honored to have you join me for a dinner")
 print(f"Dear {guest_list[1]}, i would be honored to have you join me for a dinner")

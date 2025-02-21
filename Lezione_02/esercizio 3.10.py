@@ -44,6 +44,7 @@ lista.pop(4)
 lista.pop(5)
 lista.pop(6)
 lista.pop(7)
+
 print(lista)
 
 
