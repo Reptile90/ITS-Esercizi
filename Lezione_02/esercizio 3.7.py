@@ -25,8 +25,9 @@ print(f"Dear {guest_list[3]}, i would be honored to have you join me for a dinne
 print("\nI found a bigger table, so we can invite more people!\n")
 
 guest_list.insert(0,"Misha Mansoor")
-guest_list.insert(3, "Mark Holcomb")
-guest_list.append("Jake Bowen")
+
+meta=len(guest_list)//2
+guest_list.insert(meta,"Mark Holcomb")
 
 print(f"Dear {guest_list[0]}, i would be honored to have you join me for a dinner")
 print(f"Dear {guest_list[1]}, i would be honored to have you join me for a dinner")
