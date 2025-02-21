@@ -4,7 +4,6 @@ Write a program that creates a list containing these items and then uses each fu
 
 lista = ["inglese", "Italiano", "Tedesco", "Spagnolo", "Francese"]
 
-
 lista.append("Giapponese")
 print(lista)
 
