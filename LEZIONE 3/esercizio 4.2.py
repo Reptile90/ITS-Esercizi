@@ -5,10 +5,10 @@
 animals:list[str] = ["Lion", "Tiger", "Pantera", "Cheetah"]
 
 for felino in animals:
-    print(animals)
+    print(felino)
 
 for felino in animals:
-    print(f"I like {animals}")
+    print(f"I like {felino}")
 
-print(f"All of this animals {animals} live in the jungle")
+print(f"All of this animals {','.join(animals)} live in the jungle")
 
