@@ -11,13 +11,15 @@
 • Use sort() to change your list so it’s stored in reverse-alphabetical order.
 Print the list to show that its order has changed.'''
 
-world_places:list = ["Japan", "Egypt", "California", "Norway", "Iceland"]
+world_places:list[str] = ["Japan", "Egypt", "California", "Norway", "Iceland"]
 
 print(f"Original List: {world_places} ")
 
-print("\nAlphabetical list: ", sorted(world_places))
+print(f"\nAlphabetical list: ", sorted(world_places))
 
-print(f"\n Original List {world_places} \n")
+print(f"\nAlphabetical Reverse list: ", sorted(world_places,reverse=True))
+
+print(f"\nOriginal List {world_places} \n")
 
 world_places.reverse()
 
