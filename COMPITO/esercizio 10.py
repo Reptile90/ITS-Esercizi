@@ -67,7 +67,7 @@ for n in lista_numeri:
 max_frequenza = max(frequenze.values())
 numeri_frequenti = []
 for numero, freq in frequenze.items():
-    if freq == max_frequenza:
+    if freq == max_frequenza and max_frequenza :
         numeri_frequenti.append(numero)
 
 print(f"La somma dei numeri pari è {somma_pari}")
