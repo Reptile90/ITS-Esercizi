@@ -12,7 +12,7 @@ if n1 > n2:
 prodotto=1
 
 #inizializzo il secondo ciclo per eseguire il prodotto
-for i in range(n1,n2):
+for i in range(n1,n2+1):
 
   prodotto *= i
 #stampo il risultato
