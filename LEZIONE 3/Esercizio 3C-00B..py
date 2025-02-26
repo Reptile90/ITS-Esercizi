@@ -27,11 +27,12 @@ Mi dispiace Alex, non e' possibile procedere con la generazione di un documento 
 nome:str = input("Digita il tuo nome: ")
 gender:str = input("Digita m se sei un maschio, digita f se sei una femmina: ")
 
+print(f"Nome: {nome}")
 
 match gender:
     case "m":
-        print(f"Nome: {nome} Gender: Maschio")
+        print("Gender: Maschio")
     case "f":
-        print(f"Nome {nome} Gender: Femmina")
+        print(" Gender: Femmina")
     case _:
         print("Mi dispiace {nome}, non e' possibile procedere con la generazione di un documento di identità!")
