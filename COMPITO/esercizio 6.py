@@ -6,7 +6,7 @@ Il programma deve gestire anche il caso in cui n1 > n2, calcolando comunque il p
 n1 = int(input("Digita un numero intero: "))
 n2 = int(input("Digita un altro numero intero: "))
 
-#inizializzo il ciclo per la verifica dei due numeri
+# condizione
 if n1 > n2:
   n1,n2 = n2,n1
 prodotto=1
