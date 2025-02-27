@@ -12,7 +12,7 @@ Expected Output:
 ['casa', 'hotel', 'b&b']
 Categoria sconosciuta'''
 
-oggetti:list =[]
+oggetti:list[str] =[]
 
 for i in range(3):
     scelta:str = input("Inserisci un oggetto: ")
