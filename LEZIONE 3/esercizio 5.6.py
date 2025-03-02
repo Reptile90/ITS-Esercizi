@@ -9,7 +9,7 @@
 
 
 
-person:int = 95
+person:int = int(input("Insert your age: "))
 
 if person < 2:
     print("The person is a baby")
@@ -21,6 +21,6 @@ elif person >= 13 and person < 20:
     print("The person is a teenager")
 elif person >= 20 and person < 65:
     print("The person is an adult")
-elif person >= 65:
+else:
     print("The person is an elder")
 
