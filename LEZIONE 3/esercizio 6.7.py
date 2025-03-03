@@ -1,23 +1,25 @@
 '''People: Start with the program you wrote for Exercise 6-1. Make two new dictionaries representing different people, and store all three dictionaries in a list called people. Loop through your list of people. As you loop through the list, print everything you know about each person.'''
 
+from typing import Any
 
-person1:dict[any]={
+person1:dict[Any]={
     "First name":"Lorenzo", 
     "Last name":"Anzivino", 
     "Age": 27, 
-    "City" : 
-    "Pomezia"
+    "City" : "Pomezia"
     }
-person2:dict[any]={
+person2:dict[Any]={
     "First name":"Patrick", 
     "Last name":"Masone", 
     "Age": 33, 
-    "City" : "Pomezia"}
-person3:dict[any]= {
+    "City" : "Pomezia"
+    }
+person3:dict[Any]= {
     "First name":"Giuseppe", 
     "Last name":"Ciurleo", 
     "Age": 33, 
-    "City" : "Roma"}
+    "City" : "Roma"
+    }
 
 people:list[dict]= [person1,person2,person3]
     
