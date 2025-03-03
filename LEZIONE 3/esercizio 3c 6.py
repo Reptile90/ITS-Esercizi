@@ -57,35 +57,90 @@ Non so dire in quale categoria classificare l'animale drago!
 Non sono in grado di fornire informazioni sull'habitat aria.'''
 
 
-animali:str = input("Digita un animale: ")
-habitat:str = input("Digita un habitat: ")
+animali:str = input("Digita un animale: ").lower()
+habitat:str = input("Digita un habitat: ").lower()
 
 
 
 match animali:
     case "cane"|"gatto"|"cavallo"|"elefante"|"leone"|"balena"|"delfino":
-        animal_type:str= "Mammiferi"
+        animal_type:str= "mammiferi"
         print(f"{animali} appartiene alla categoria dei {animal_type}")
+
+        match habitat:
+
+            case   "terra" if animali == "cane"or"gatto"or"cavallo"or"elefante"or"leone":
+             print(f"L'animale {animali} è uno dei mammiferi che può vivere sulla {habitat}!")
+
+            case "acqua" if animali == "balena" or "delfino":
+                print(f"L'animale {animali} è uno dei mammiferi che può vivere nell'{habitat}")
+
+            case _:
+                print(f"Non sono in grado di fornire informazioni sull'habitat 'aria'")
         
         
         
     case "serpente"|"lucertola"|"tartaruga"|"coccodrillo":
-        animal_type:str= "Rettili"
+        animal_type:str= "rettili"
         print(f"{animali} appartiente alla categoria dei {animal_type}")
+
+        match habitat:
+            
+            case "terra" if animali == "serpente"or"lucertola":
+                print(f"L'animale {animali} è uno dei rettili che può vivere sulla terra!")
+
+            case "acqua"|"terra" if animali == "coccodrillo"or"tartaruga":
+                print(f"L'animale {animali} è uno dei rettili che può vivere nell' acqua e sulla terra")
+
+            case _:
+                print(f"Non sono in grado di fornire informazioni sull'habitat 'aria'")
+        
         
 
     case "aquila"|"pappagallo"|"gufo"|"falco"|"cigno"|"anatra"|"gallina"|"tacchino":
-        animal_type:str = "Uccelli"
+        animal_type:str = "uccelli"
         print(f"{animali} appartiene alla categoria degli {animal_type}")
+
+        match habitat:
+
+            case  "aria" if animali == "aquila"or"pappagallo"or"gufo"or"falco":
+                print(f"L'animale {animali} è uno degli uccelli che pùò vivere in aria!")
+
+            case "acqua" if animali == "anatra"or"cigno":
+                print(f"L'animale {animali} è uno dei rettili che può vivere nell' acqua!")
+
+            case "terra" if animali == "gallina"or"tacchino"or"anatra":
+                print(f"L'animale {animali} è uno degli uccelli che pùò vivere sulla terra")
+
+            case _:
+                print(f"Non sono in grado di fornire informazioni sull'habitat {habitat}")
         
 
     case "squalo"|"trota"|"salmone"|"carpa":
-        animal_type:str = "Pesci"
+        animal_type:str = "pesci"
         print(f"{animali} appartiene alla categoria dei P{animal_type}")
+
+        match habitat:
+
+            case "acqua":
+                print(f"L'animale {animali} è uno dei {animal_type} che può vivere nell'acqua")
+
+            case _:
+                print(f"Non sono in grado di fornire informazioni sull'habitat {habitat}")
+
         
     case _:
         animal_type:str = "Unknown"
         print(f"Non sò dire in quale categoria classificare l'animale {animali}") 
+
+
+animal_info:dict[str] = {}
+
+animal_info["Animal"] = animali
+animal_info["Animal Type"]= animal_type
+animal_info["Habitat"]= habitat
+
+print(animal_info)
 
 
         
