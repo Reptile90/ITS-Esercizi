@@ -1,4 +1,5 @@
-tonalita = [
+def trova_accordi(accordo1,accordo2, accordo3,accordo4):
+    tonalita = [
 
     {"C": "Maj", "D": "Min","E": "Min", "F": "Maj", "G": "Maj","A":"Min","B":"Dim"},
     {"C#": "Maj", "D#": "Min","F": "Min", "F#": "Maj", "G#": "Maj","A#":"Min","C":"Dim"},
@@ -12,10 +13,12 @@ tonalita = [
     {"A": "Maj", "B": "Min","C#": "Min", "D":"Maj","E":"Maj","F":"Min","G#":"Dim"},
     {"A#": "Maj", "C": "Min","D": "Min", "D#":"Maj","F":"Maj","G":"Min","A":"Dim"},
     {"B": "Maj", "C#": "Min","D#": "Min", "E":"Maj","F#":"Maj","G#":"Min","A#":"Dim"},
-]
+    ]
 
 
-def trova_accordi():
+
+
+
 
         
 
