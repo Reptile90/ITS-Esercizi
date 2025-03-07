@@ -1,5 +1,5 @@
-def trova_accordi(accordo1,accordo2, accordo3,accordo4):
-    tonalita = [
+
+tonalita = [
 
     {"C": "Maj", "D": "Min","E": "Min", "F": "Maj", "G": "Maj","A":"Min","B":"Dim"},
     {"C#": "Maj", "D#": "Min","F": "Min", "F#": "Maj", "G#": "Maj","A#":"Min","C":"Dim"},

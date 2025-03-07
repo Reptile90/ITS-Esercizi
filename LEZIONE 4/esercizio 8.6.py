@@ -3,9 +3,10 @@ The function should return a string formatted like this: "Santiago, Chile".
 Call your function with at least three city-country pairs, and print the values that are returned.
 '''
 
-def city_country(city:str,country:str):
+def city_country(city:str,country:str)->str : 
     formatted:str = f"{city.capitalize()}, {country.capitalize()}"
     return formatted
+
 
 
 

@@ -6,7 +6,9 @@ def make_shirt(size="Large", message= "I love Python"):
     print(f"I would buy a {size} t-shirt with the message \"{message}\"")
 
     
+make_shirt()
 
+make_shirt("medium")
 
 make_shirt("XL", "I'm a software developer")
 
@@ -14,6 +16,6 @@ make_shirt("XL", "I'm a software developer")
 make_shirt(size="XL", message = "I'm a software developer")
 
 
-make_shirt()
 
-make_shirt("medium")
+
+
