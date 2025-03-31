@@ -1,0 +1,25 @@
+Azienda 1 - Raffinamento dei requisiti
+
+-Requisiti sugli impiegati
+ 1.1. Nome
+ 1.2. Cognome
+ 1.3. Data di nascita
+ 1.4. stipendio (un numero reale >=0)
+ 1.5. dipartimento di afferenza(esattamente uno. vedi req 2)
+ 1.6  progetti a cui partecipa(anche nessuno. vedi req 3)
+	
+-Requisiti sui dipartimenti
+ 2.1  Nome
+ 2.2  Telefono(una stringa)
+ 2.3  impiegati chi vi afferiscono(v.req.1)
+  2.3.1 per ognuno di essi, la data di afferenza
+ 2.4 per ognuno di essi il direttore (e' un impiegato, v.req 1)
+ 
+-Requisiti progetti aziendali
+ 3.1 Nome
+ 3.2 Budget(un numero reale > 0)
+ 3.3 Ogni impiegato partecipante (v.req.1)
+ 
+ 
+
+  		
