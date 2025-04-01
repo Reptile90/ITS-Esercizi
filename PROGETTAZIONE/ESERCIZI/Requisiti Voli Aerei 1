@@ -5,19 +5,20 @@ Voli aerei1 - Raffinamento dei requisiti
 	1.2 Durata (Minuti)
 	1.3 Compagnia area (Vedi punto 3)
 	1.4 Aereoporti 
-		1.4.1 per ognuno di essi l'Aeroporto di partenza (vedi 2)
-		1.4.2 per ognuno di essi l'Aeroporto di arrivo (vedi 2)
+		1.4.1 Aereoporti di partenza (vedi punto 2)
+		1.4.2 Aeroporti di arrivo (vedi punto 2)
+
 2-Requisiti degli aereoporti
 	2.1 Codice (Stringa alfanumerica come da standard)
 	2.2 Nome (Stringa)
-	2.3 Città vedi punto 4.2
-	2.4 Nazione (Stringa)
+	2.3 Città vedi punto 4
+	2.4 Nazione vedi punto 4
 	
-3-Requisiti delle compagnire aeree
+3-Requisiti delle compagnie aeree
 	3.1 Nome (Stringa)
-	3.2 Anno di fondazione (Intero >0)
-	3.3 Città vedi punto 4.2
-4 Requisiti Nazione
+	3.2 Anno di fondazione (Intero > 0)
+	3.3 Città sede della compagnia vedi punto 4
+4 Requisiti delle città e nazioni
 	4.1 Nome (Stringa)
-	4.2 Città
+	4.2 Nazione di appartenenza (Stringa
 	4.3 Numero abitanti (Intero > 0)
