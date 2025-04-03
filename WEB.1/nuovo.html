@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Elenchi</h1>
+    <ul>
+        <ol>
+        <li>lunedi</li>
+        <li>martedi</li>
+        </ol>
+    </ul>
+
+    <!--Tabelle---all'inizio---si usavano solo le tabelle
+    disuso per l'uscita degli smartphone e sono state sostituite con i div.
+    i div utilizzano la stessa logica delle tabelle-->
+
+    <table border="1">
+        <tr>
+            <td>
+                <div>a1</div>
+            </td>
+            <td>
+                <div>
+                    <H1>Banner del mio sito</H1>
+                <div>
+            </td>
+            
+            <td>
+                <div>
+                    <table border="1" width="100%">
+                        <tr>
+                            <td>titolo</td>
+                            <tr>
+                                <td>descrizione</td>
+                            </tr>
+                        </tr>
+
+                    </table>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>a2</td>
+            <td>b2</td>
+            <td>c2</td>
+        </tr>
+    </table>
+
+    <!--Il formn rendere la nostra pagina interattiva.
+    nel tag form abbiamo
+        action  destinatario
+        method  get/post
+        name    nome del form
+        
+        invio dei dati
+            chiaro(get)
+            nascosti(post)-->
+
+        
+    <form action="https://www.google.com" method="get">
+        <input type="text" name="nome" id="">
+        <input type="file" name="cv">
+        <input type="checkbox" value="yes"  name="sesso">
+
+        <!---input radio si usa quando devo effettuare una scelta multipla-->
+        <input type="radio" value="maschio" name="sesso">
+        <input type="radio" value="femmina" name="sesso">
+        <input type="radio" value="n/d" name="sesso">
+
+        <input type="submit" name="mese">
+        <select>
+            <option value="">Gennaio</option>
+            <option value="">Febbraio</option>
+            <option value="">Marzo</option>
+            <option value="">Aprile</option>
+            <option value="">Maggio</option>
+        <textarea name="" id=""></textarea>
+        <input type="submit">
+        </select>
+
+    </form>
+
+</body>
+</html>
