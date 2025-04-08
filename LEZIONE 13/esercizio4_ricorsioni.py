@@ -10,14 +10,14 @@ In caso negativo, significa che il numero n ha più cifre; dunque, dividere n pe
 '''
 
 def recursiveDigitCounter(n)-> int:
-    if n < 0:
+    if abs(n) < 0:
         return recursiveDigitCounter(-n)
 
-    if n < 10:
+    if abs(n) < 10:
         return 1
     
     else:
         return 1 + recursiveDigitCounter(n / 10)
 
 
-print(recursiveDigitCounter(120))
+print(recursiveDigitCounter(-120))
