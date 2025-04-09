@@ -19,3 +19,7 @@ y = [1,2]
 somma = [x[i] + y[i] for i in range (len(x))]
 
 print(somma)
+
+
+foo =  lambda x: x*x
+print(foo(10))
