@@ -105,5 +105,7 @@ print(studente2.getMatricola())
 
 #richiamo metodo __call__
 studente()
+studente2()
+p()
 
 
