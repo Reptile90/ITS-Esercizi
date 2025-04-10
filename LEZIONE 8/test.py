@@ -103,4 +103,7 @@ print("\n", studente == studente2)
 print(studente.getMatricola())
 print(studente2.getMatricola())
 
+#richiamo metodo __call__
+studente()
+
 
