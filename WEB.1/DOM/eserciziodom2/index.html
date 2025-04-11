@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La tua lista della spesa</title>
+    <script>
+        
+        function addElements() {
+            var prodotto = document.getElementById("prodotto").value;
+            var ul = document.querySelector("ul");
+            var list = document.createElement("list");
+                list.appendChild(document.createTextNode(prodotto));
+                list.appendChild(list)
+        }
+
+    </script>
+</head>
+<body>
+    <div>
+        <form onreset="">
+            <label for="nome">Inserisci il nome del prodotto che vuoi aggiungere:</label><br>
+            <input type="text" name="prodotto" id="prodotto" maxlength="60"> <br><br>
+            <button type="button">Aggiungi</button><br><br>
+            <button type="reset">Svuota</button>
+        </form>
+    </div>
+    <div>
+        <ul>Lista della spesa</ul>
+    </div>
+</body>
+</html>
