@@ -17,6 +17,6 @@ class Alieno:
         return self.galaxy
     
     def __str__(self)->str:
-        return f"\nAlieno proveniente dalla galassia {self.galaxy}"
+        return f"\nAlieno proveniente dalla galassia {self.getGalaxy()}"
     def speak(self)->None:
         print(f"inasdmnfosmd")
