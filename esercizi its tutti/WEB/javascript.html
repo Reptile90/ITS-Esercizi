@@ -33,6 +33,44 @@
             Javascript front-end(cliente)... html...
 
             3 MODI: inline (da evitare) blocco (si usa poco) esterno(si usa molto)
+        <script>
+
+            //dichiarazione di varibile FASE 1;
+            var anni = 10;
+            var anni = 30;
+
+            //dichiarazine di varibile FASE 2
+
+            let anni2 = 20;
+            anni2 = 30;
+
+
+            //HOISTING: caratteristica js.... meccanismo automatica
+            //sposta le dichiarazione di variabili alla riga 1 all'inizio.
+            //sposta le funzioni, tutte anche il contenuto.
+            function test(){
+                console.log("sto eseguendo la funzione test");
+                
+            }
+
+            console.log(anni);//undefined
+
+            let test2 = () => {
+                console.log("sto eseguendo la funzione test"); // metodo  consigliato per scrivere una funzione in js
+
+                // variabili: stringhe-numeri-boolean-null-undefined
+                //js : tipizzazione debole...
+                // fase 1
+                var x= 10;
+                x="mario"
+                // fase 2
+                let y = `string ${anni2} arrivederci`;
+                
+            }
+
+
+            
+        </script>
 
 
 
