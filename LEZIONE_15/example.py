@@ -6,7 +6,7 @@ print(file.read())
 
 file.close()
 
-file = open("example.txt","a")
+file = open("example.txt","a") #a = append
 try:
     pass
 except Exception as e:
