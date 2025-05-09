@@ -21,7 +21,7 @@ db:dict = {
         "TRXMSE...": {"name": "Giovanni","surname": "Fiorentino", "age":20}
 }
 
-json.dump(db,file)
+json.dump(db,file, indent = 4)
 
 
 file.close()
