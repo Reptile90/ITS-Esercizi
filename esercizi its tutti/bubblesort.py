@@ -45,4 +45,5 @@ with Stopwatch():
     import random
 
     lista_numeri = random.sample(range(1, 101), 100)
+    print(lista_numeri)
     print(bubblesort(lista_numeri))

@@ -35,11 +35,11 @@ class CodiceFiscale:
     def __init__(self, cf: str):
         if not self.is_valid(cf):
             raise ValueError("Codice Fiscale non valido")
-        self.cf = cf
-
+        
     @classmethod
     def is_valid(cls, cf: str) -> bool:
         return bool(cls.pattern.fullmatch(cf))
+
     
 class Indirizzo:
     _via:str
@@ -159,12 +159,9 @@ class Direttore:
         self.anni_servizio = anni_servizio
 
     def setCodiceFiscale(self,cf)->None:
-        if not isinstance(cf,CodiceFiscale):
-            raise ValueError("Il codice fiscalere deve essere un valore di CodiceFiscale")
-        self.cf = cf
+        self.cf:CodiceFiscale = CodiceFiscale(cf)
 
     
-
 
 
 class Dipartimento:
@@ -260,4 +257,7 @@ class Fornitore:
         return f"Ragione Sociale: {self.ragioneSociale}\nPartita Iva: {self.partitaIva.partitaIva}\nIndirizzo: {self.indirizzo}\nEmail: {self.email}\nTelefono: {self.telefono}"
 
 
+if __name__ == "__main__":
 
+    d1:Direttore = Direttore("Mario","Rossi", "RSSMRO43C22H501VE",23, 7)
+    print(d1)
