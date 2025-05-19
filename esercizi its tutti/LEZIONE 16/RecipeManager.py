@@ -47,12 +47,8 @@ class RecipeManager:
         return self.recipes
 
     def list_recipes(self):
-        if not self.recipes:
-            print("Nessuna ricetta disponibile.")
-            return
-
-        
-        return ['Torta di mele']
+        if self.recipes:
+            return [recipe for recipe in self.recipes]
 
 
     def list_ingredients(self,recipe_name)->list[str]|None:
