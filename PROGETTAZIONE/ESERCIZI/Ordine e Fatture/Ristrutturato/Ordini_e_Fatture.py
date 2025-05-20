@@ -237,7 +237,6 @@ class Ordine:
 
 class Fornitore:
 
-    
     def __init__(self, ragioneSociale: str, partitaIva: PartitaIva, indirizzo: Indirizzo, telefono: Telefono, email: Email):
         self.setRagioneSociale(ragioneSociale)
         self.setPartitaIva(partitaIva)
