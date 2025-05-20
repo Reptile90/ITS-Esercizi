@@ -275,3 +275,4 @@ class Fornitore:
 
 
 
+dir1:Direttore = Direttore("Mario ROssi", "MRIRSS63C22H501V",)
