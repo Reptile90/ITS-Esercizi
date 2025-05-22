@@ -347,3 +347,4 @@ if __name__ == "__main__":
         print("Fornitore:\n", fornitore)
     except ValueError as e:
         print("Errore Fornitore:", e)
+
