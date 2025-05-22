@@ -291,7 +291,7 @@ if __name__ == "__main__":
 
     print(f"Nazione: {italia.nome}, Regione: {lazio.nome}, Città: {roma.nome}")
 
-    # Test Codice Fiscale valido
+    # Test Codice Fiscale 
     try:
         cf = CodiceFiscale("RSSMRA85T10A562S")
         print("Codice Fiscale valido:", cf)
@@ -302,7 +302,7 @@ if __name__ == "__main__":
     indirizzo = Indirizzo("Via Nazionale", 123, "00184")
     print("Indirizzo:", indirizzo)
 
-    # Test Partita IVA valida
+    # Test Partita IVA 
     try:
         piva = PartitaIva("12345678901")
         print("Partita IVA valida:", piva)
