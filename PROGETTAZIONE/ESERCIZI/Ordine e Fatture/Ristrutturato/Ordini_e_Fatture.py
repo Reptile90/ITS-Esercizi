@@ -292,59 +292,52 @@ if __name__ == "__main__":
     print(f"Nazione: {italia.nome}, Regione: {lazio.nome}, Città: {roma.nome}")
 
     # Test Codice Fiscale 
-    try:
-        cf = CodiceFiscale("RSSMRA85T10A562S")
-        print("Codice Fiscale valido:", cf)
-    except ValueError as e:
-        print("Errore CF:", e)
+    
+    cf = CodiceFiscale("RSSMRA85T10A562S")
+    print("Codice Fiscale valido:", cf)
+    
 
     # Test Indirizzo
     indirizzo = Indirizzo("Via Nazionale", 123, "00184")
     print("Indirizzo:", indirizzo)
 
     # Test Partita IVA 
-    try:
-        piva = PartitaIva("12345678901")
-        print("Partita IVA valida:", piva)
-    except ValueError as e:
-        print("Errore Partita IVA:", e)
+    
+    piva = PartitaIva("12345678901")
+    print("Partita IVA valida:", piva)
+    
 
     # Test Telefono
-    try:
-        telefono = Telefono("+393491112233")
-        print("Telefono valido:", telefono)
-    except ValueError as e:
-        print("Errore telefono:", e)
+    
+    telefono = Telefono("+393491112233")
+    print("Telefono valido:", telefono)
+    
 
     # Test Email
-    try:
-        email = Email("fornitore@example.com")
-        print("Email valida:", email)
-    except ValueError as e:
-        print("Errore email:", e)
+    
+    email = Email("fornitore@example.com")
+    print("Email valida:", email)
+    
 
     # Test Direttore
-    try:
-        direttore = Direttore("Mario", "Rossi", cf, date(1985, 3, 16), 10)
-        print("Direttore:\n", direttore)
-    except ValueError as e:
-        print("Errore Direttore:", e)
+   
+    direttore = Direttore("Mario", "Rossi", cf, date(1985, 3, 16), 10)
+    print("Direttore:\n", direttore)
+    
 
     # Test Dipartimento
     dip = Dipartimento("Amministrazione", indirizzo)
     print("Dipartimento:\n", dip)
 
     # Test Ordine
-    try:
-        ordine = Ordine(date(2024, 5, 20), 1000.0, 22.0, "Ordine forniture ufficio", StatoOrdine.INVIATO)
-        print("Ordine:\n", ordine)
-    except ValueError as e:
-        print("Errore Ordine:", e)
+    
+    ordine = Ordine(date(2024, 5, 20), 1000.0, 22.0, "Ordine forniture ufficio", StatoOrdine.INVIATO)
+    print("Ordine:\n", ordine)
+    
 
     # Test Fornitore
-    try:
-        fornitore = Fornitore("Ufficio S.p.A", piva, indirizzo, telefono, email)
-        print("Fornitore:\n", fornitore)
-    except ValueError as e:
-        print("Errore Fornitore:", e)
+    
+    fornitore = Fornitore("Ufficio S.p.A", piva, indirizzo, telefono, email)
+    print("Fornitore:\n", fornitore)
+    
 
