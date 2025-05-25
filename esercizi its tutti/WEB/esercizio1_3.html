@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p id="variabile1"></p>
+        <p id="variabile2"></p>
+        <p id="variabile3"></p>
+    </div>
+    <script>
+        let x = 10
+        let y = x
+        let z = "Stefano"
+        document.getElementById("variabile1").innerHTML = x + " è di tipo "+typeof(x)
+        document.getElementById("variabile2").innerHTML = y + " è di tipo "+typeof(y)
+        document.getElementById("variabile3").innerHTML = z + " è di tipo "+typeof(z)
+
+    </script>
+</body>
+</html>
