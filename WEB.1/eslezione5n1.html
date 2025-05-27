@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="risultato">
+
+    </div>
+    <div id="saluto">
+
+    </div>
+    <script>
+        //esempio di funzione che non torna nulla
+        function somma(num1,num2){
+            document.getElementById("risultato").innerHTML = num1 + num2
+        }
+        somma(2,3);
+
+        function benvenuto(nome){
+            return "Welcome" + nome;
+        }
+
+        let msg = benvenuto(" Stefano ");
+        document.getElementById("saluto").innerHTML = msg
+    </script>
+</body>
+</html>
