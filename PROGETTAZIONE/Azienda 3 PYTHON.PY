@@ -2,14 +2,15 @@ from typing import Self
 from datetime import datetime.date
 
 class RealGEZ(float):
-def __new__(cls, v:int|float)->Self
+	def __new__(cls, v:int|float)->Self:	
+		pass
 	if v < 0:
 		raise ValueError(f"Value v {v} must be >= 0")
 	return float.__new__(cls, v)
 	
 	
 	
-class RealGZ(RealGEZ)
+class RealGZ(RealGEZ):
 	def__new__(cls, v:int|float|str)->Self:
 	if v <= 0:
 		raise ValueError(f"Value v {v} must be >0")

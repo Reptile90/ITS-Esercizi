@@ -19,11 +19,11 @@
         }
         somma(2,3);
 
-        function benvenuto(nome){
+        function benvenuto(nome = " guest "){
             return "Welcome" + nome;
         }
 
-        let msg = benvenuto(" Stefano ");
+        let msg = benvenuto();
         document.getElementById("saluto").innerHTML = msg
     </script>
 </body>
