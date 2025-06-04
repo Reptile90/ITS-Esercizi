@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="risultato">
+
+    </div>
+
+    <div id="settimana">
+
+    </div>
+
+    <script>
+        function inrange(num1){
+            return num1 >= 1 && num1 <= 7;
+
+
+
+        }
+
+        function giorni_settimana(num1){
+            switch (num1) {
+                case 1:
+                    return "Lunedì";
+                case 2:
+                    return "Martedì";
+                case 3:
+                    return "Mercoledì";
+                case 4:
+                    return "Giovedì";
+                case 5:
+                    return "Venerdì";
+                case 6:
+                    return "Sabato";
+                case 7: 
+                    return "Domenica";
+                default:
+                    return "Peccato, non posso indovinare il giorno.";
+
+
+            }
+        }
+
+        let num1 = 5;
+        let result = inrange(num1);
+
+        document.getElementById("risultato").innerHTML = result;
+
+        if (result) {
+            document.getElementById("settimana").innerHTML = giorni_settimana(num1);
+        } else {
+            document.getElementById("settimana").innerHTML = "Numero fuori intervallo";
+        }
+
+
+    </script>
+</body>
+</html>
