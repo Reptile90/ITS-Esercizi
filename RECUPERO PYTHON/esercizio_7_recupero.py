@@ -9,7 +9,7 @@ class ContactManager: #definizione della classe ContactManager
         if name not in self.contacts: #se il contatto non è nella dizionario contacts
             self.contacts[name] = phone_numbers #aggiungo il contatto al dizionario originale
         else:
-            raise ValueError ("Errore: il contatto esiste già") #rilascio errore se il contatto è già presente nella lista
+            print("Errore: il contatto esiste già") #rilascio errore se il contatto è già presente nella lista
         
         return {name: phone_numbers} #ritorna un dizionario con solo il contatto aggiunto
     
@@ -18,9 +18,9 @@ class ContactManager: #definizione della classe ContactManager
     def add_phone_number(self,contact_name:str,phone_number:str)->dict[str,list[str]]:
 
         if contact_name not in self.contacts:  #verifico se il nome è già presente nel dizionario contacts
-            raise ValueError ("Errore: il contatto non esiste")
+            print("Errore: il contatto non esiste")
         if phone_number in self.contacts[contact_name]: #verifico se il numero di telefono è già presente nel dizionario contacts
-            raise ValueError ("Errore: il numero esiste già")
+            print("Errore: il numero esiste già")
         
         self.contacts[contact_name].append(phone_number)   #aggiungo il numero al dizionario originale
         return {contact_name: self.contacts[contact_name]}
@@ -30,9 +30,9 @@ class ContactManager: #definizione della classe ContactManager
     def remove_phone_number(self, contact_name:str , phone_number:str)->dict[str,list[str]]:
 
         if contact_name not in self.contacts: #verifico se il nome è già presente nel dizionario contacts
-            raise ValueError ("Errore: il contatto non esiste")
+            print("Errore: il contatto non esiste")
         if phone_number not in self.contacts[contact_name]: #verifico se il numero è già presente nel dizionario contacts
-            raise ValueError ("Errore: il numero non esiste")
+            print("Errore: il numero non esiste")
 
         self.contacts[contact_name].remove(phone_number)
         return {contact_name: self.contacts[contact_name]}
@@ -41,11 +41,11 @@ class ContactManager: #definizione della classe ContactManager
     def update_phone_number(self, contact_name:str, old_phone_number:str, new_phone_number:str)->dict[str,list[str]]:
 
         if contact_name not in self.contacts: #verifico se il nome è già presente nel dizionario contacts
-            raise ValueError ("Errore: il contatto non esiste")
+            print("Errore: il contatto non esiste")
         if old_phone_number not in self.contacts[contact_name]: #verifico se il numero è già presente nel dizionario contacts
-            raise ValueError ("Errore: il numero non esiste")
+            print("Errore: il numero non esiste")
         if new_phone_number in self.contacts[contact_name]: #verifico che il nuovo numero non sia già presente nel dizionario contacts
-            raise ValueError ("Errore: il numero è già presente")
+            print("Errore: il numero è già presente")
         
         self.contacts[contact_name].remove(old_phone_number) #rimuovo il precedente numero
         self.contacts[contact_name].append(new_phone_number) #aggiungo il nuovo numero
@@ -59,7 +59,7 @@ class ContactManager: #definizione della classe ContactManager
     #metodo per mostrare tutti i numeri di un determinato contatto
     def list_phone_numbers(self,contact_name:str)->list[str]:
         if contact_name not in self.contacts:
-            raise ValueError ("Errore: il contatto non esiste")
+            print("Errore: il contatto non esiste")
         else:
             return self.contacts[contact_name]
         
@@ -72,7 +72,7 @@ class ContactManager: #definizione della classe ContactManager
             if phone_number in numbers:    #verifico se il numero è presente nel dizionario contacts
                 found_contacts.append(name)
         if not found_contacts:   #se non abbiamo trovato contatti diamo un errore
-            raise ValueError ("Nessun contatto trovato con questo numero di telefono")
+            print("Nessun contatto trovato con questo numero di telefono")
         return found_contacts
     
 
@@ -98,52 +98,38 @@ if __name__ == "__main__":
     print(cm.list_contacts())
     print()
 
-    try:
-        print("Aggiungo contatto 'Sara':", cm.create_contact("Sara", ["111222333"]))
-    except ValueError as e:
-        print(e)
+    
+    print("Aggiungo contatto 'Sara':", cm.create_contact("Sara", ["111222333"]))
+    
     print()
 
-    try:
-        print("Aggiungo contatto 'Alice' di nuovo:", cm.create_contact("Alice", ["000000000"]))
-    except ValueError as e:
-        print(e)
+    
+    print("Aggiungo contatto 'Alice' di nuovo:", cm.create_contact("Alice", ["000000000"]))
     print()
 
-    try:
-        print("Aggiungo numero a 'Bob':", cm.add_phone_number("Bob", "444555666"))
-    except ValueError as e:
-        print(e)
+
+    print("Aggiungo numero a 'Bob':", cm.add_phone_number("Bob", "444555666"))
     print()
 
-    try:
-        print("Rimuovo numero da 'Carla':", cm.remove_phone_number("Carla", "555555555"))
-    except ValueError as e:
-        print(e)
+
+    print("Rimuovo numero da 'Carla':", cm.remove_phone_number("Carla", "555555555"))
+
     print()
 
-    try:
-        print("Aggiorno numero di 'Maria':", cm.update_phone_number("Maria", "789789789", "111999888"))
-    except ValueError as e:
-        print(e)
+    print("Aggiorno numero di 'Maria':", cm.update_phone_number("Maria", "789789789", "111999888"))
+
     print()
 
-    try:
-        print("Numeri di 'Gina':", cm.list_phone_numbers("Gina"))
-    except ValueError as e:
-        print(e)
+
+    print("Numeri di 'Gina':", cm.list_phone_numbers("Gina"))
+
     print()
 
-    try:
-        print("Contatti con numero '333333333':", cm.search_contact_by_phone_number("333333333"))
-    except ValueError as e:
-        print(e)
+    print("Contatti con numero '333333333':", cm.search_contact_by_phone_number("333333333"))
     print()
 
-    try:
-        print("Contatti con numero '000000000':", cm.search_contact_by_phone_number("000000000"))
-    except ValueError as e:
-        print(e)
+    print("Contatti con numero '000000000':", cm.search_contact_by_phone_number("000000000"))
+
     print()
 
             
