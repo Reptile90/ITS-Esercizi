@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta description="Corso React">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="app.js" type="module"></script>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script>
+        const elementRoot= document.querySelector("#root");
+        const root=ReactDOM.createRoot(elementRoot);
+
+        const h1= React.createElement("h1",{style:{ color: "red",},classname:"big",
+        onClick:(e)=>{console.log(e.target)}},"Primo tag H1 con  react");
+
+        root.render(h1);
+    </script>
+</body>
+</html>
