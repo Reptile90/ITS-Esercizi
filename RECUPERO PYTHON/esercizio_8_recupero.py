@@ -1,5 +1,5 @@
 class Movie:
-    def __init__(self, movie_id:str,  title:str, director:str, is_rented:bool)->None:
+    def __init__(self, movie_id:str,  title:str, director:str)->None:
         self.movie_id:str = movie_id
         self.title:str = title
         self.director:str = director
@@ -22,7 +22,7 @@ class Movie:
 
 
 class Customer:
-    def __init__(self,customer_id:str, name:str, rented_movies:list[Movie])->None:
+    def __init__(self,customer_id:str, name:str, rented_movies:list[Movie]= [])->None:
         self.customer_id:str = customer_id
         self.name:str = name
         self.rented_movies:list[Movie] = rented_movies
@@ -43,20 +43,22 @@ class Customer:
         
 
 class VideoRentalStore:
-    def __init__(self, movies:dict[str,Movie], customers:dict[str,Customer])->None:
+    def __init__(self, movies:dict[str,Movie]={}, customers:dict[str,Customer]={})->None:
         self.movies:dict[str,Movie] = movies
         self.customers:dict[str,Customer] = customers
     
 
     def add_movie(self,movie_id:str,title:str,director:str)->None:
         if movie_id not in self.movies:
-            self.movies[movie_id] = Movie(movie_id, title, director, False)
+            movie:Movie = Movie(movie_id, title, director)
+            self.movies[movie_id] = movie
         else:
             print(f"Il film con ID '{movie_id} esiste già")
         
     def register_customer(self, customer_id:str,name:str)->None:
         if customer_id not in self.customers:
-            self.customers[customer_id] = Customer(customer_id, name, [])
+            customer:Customer = Customer(customer_id, name)
+            self.customers[customer_id] = customer
         else:
             print(f"Il cliente con ID '{customer_id} è già registrato")
         
@@ -82,7 +84,11 @@ class VideoRentalStore:
         else:
             print("Cliente non trovato")
             return []
-
+    def get_rented_movies_all(self)->list[Movie]:
+        list_rented:list[Movie]=[]
+        for customer in self.customers.values():
+            list_rented.extend(customer.rented_movies)
+        return list_rented
 
 if __name__ == "__main__":
     store = VideoRentalStore({}, {})
@@ -116,3 +122,6 @@ if __name__ == "__main__":
     print("\nFilm ancora noleggiati da Mario Rossi:")
     for movie in store.get_rented_movies("C001"):
         print(f"- {movie.title}")
+
+    #Restituzione dei film noleggiati
+    print(store.get_rented_movies_all())
