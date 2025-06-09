@@ -93,35 +93,31 @@ class VideoRentalStore:
 if __name__ == "__main__":
     store = VideoRentalStore({}, {})
 
-    # Aggiunta film
+    
     store.add_movie("M001", "Inception", "Christopher Nolan")
     store.add_movie("M002", "Interstellar", "Christopher Nolan")
 
-    # Registrazione cliente
+
     store.register_customer("C001", "Mario Rossi")
 
-    # Noleggio film
+
     store.rent_movie("C001", "M001")
     store.rent_movie("C001", "M002")
 
-    # Tentativo di noleggiare un film già noleggiato
+
     store.rent_movie("C001", "M001")
 
-    # Lista dei film noleggiati da Mario
+
     print("Film noleggiati da Mario Rossi:")
     for movie in store.get_rented_movies("C001"):
         print(f"- {movie.title} ({movie.director})")
 
-    # Restituzione film
     store.return_movie("C001", "M001")
 
-    # Tentativo di restituire di nuovo lo stesso film
     store.return_movie("C001", "M001")
 
-    # Stampa aggiornata dei film noleggiati
     print("\nFilm ancora noleggiati da Mario Rossi:")
     for movie in store.get_rented_movies("C001"):
         print(f"- {movie.title}")
 
-    #Restituzione dei film noleggiati
     print(store.get_rented_movies_all())
