@@ -18,3 +18,17 @@ merge_intervals(intervals) # restituisce [[1, 6], [8, 10], [15,
 18]]
 intervals = [[1, 4], [4, 5]]
 merge_intervals(intervals) # restituisce [[1, 5]]'''
+
+
+def merge_intervals(intervals)->list[int]:
+    
+
+
+
+
+
+
+intervals = [[1, 3], [2, 6], [8, 10], [15, 18]]
+print(merge_intervals(intervals)) # restituisce [[1, 6], [8, 10], [15,18]]
+intervals = [[1, 4], [4, 5]]
+print(merge_intervals(intervals)) # restituisce [[1, 5]]

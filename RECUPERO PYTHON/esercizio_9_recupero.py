@@ -1,4 +1,4 @@
-from string import ascii_lowercase,ascii_uppercase
+from string import ascii_lowercase
 
 def caesar_cypher_encrypt(s,key):
     encrypted:str = ""
@@ -7,8 +7,6 @@ def caesar_cypher_encrypt(s,key):
         if letter.isalpha(): #verifico se letter non è un simbolo speciale o uno spazio
             if letter.islower(): #verifico se letter è minuscola
                 alphabet = ascii_lowercase #creo la variabile alphabet in lowercase
-            else:
-                alphabet = ascii_uppercase #creo la variabile alphabet in uppercase
 
             index = alphabet.index(letter) #indice della lettera nell'alfabeto
             new_position = (index+key) % len(alphabet) #la posizione corretta deve essere il il modulo di indice+key
@@ -26,8 +24,6 @@ def caesar_cypher_decrypt(s,key):
         if letter.isalpha(): #verifico se letter non è un simbolo speciale o uno spazio
             if letter.islower(): #creo la variabile alphabet in lowercase
                 alphabet = ascii_lowercase #creo la variabile alphabet in lowercase
-            else:
-                alphabet = ascii_uppercase #creo la variabile alphabet in uppercase
 
             index = alphabet.index(letter) #indice della lettera nell'alfabeto
             new_position = (index-key) % len(alphabet) #la posizione corretta deve essere il il modulo di indice-key
