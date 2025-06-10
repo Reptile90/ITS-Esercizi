@@ -5,13 +5,13 @@ def binary_search(lista, numero):
     while start <= end: #fino a che start non sia uguale a end
         mid = end // 2 #l'indice mid è uguale a start + end /2 restituendo un intero
         if lista[mid] == numero: #se l'indice mid è uguale al target ritorna true
-            return True
+            return f"Il numero {numero} è contenuto nella lista"
         elif lista[mid] < numero: #altrimenti cerca sia a destra che a sinistra se presente il numero
             start = mid + 1
         else:
             end = mid - 1
 
-    return False
+    return f"Il numero {numero} non è nella lista"
 
 
 numeri = [1, 3, 5, 7, 9, 11, 13]
