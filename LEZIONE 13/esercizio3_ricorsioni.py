@@ -13,4 +13,4 @@ def recursiveFactorial(n)->int:
     else:
         return n * recursiveFactorial(n-1)
     
-print(recursiveFactorial(24))
+print(recursiveFactorial(3))

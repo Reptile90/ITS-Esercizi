@@ -1,12 +1,12 @@
-def binary_search(lista, target):
+def binary_search(lista, numero):
     start = 0 #imposto l'indice 0
     end = len(lista) - 1 #imposto l'indice finale
 
     while start <= end: #fino a che start non sia uguale a end
-        mid = (start + end) // 2 #l'indice mid è uguale a start + end /2 restituendo un intero
-        if lista[mid] == target: #se l'indice mid è uguale al target ritorna true
+        mid = end // 2 #l'indice mid è uguale a start + end /2 restituendo un intero
+        if lista[mid] == numero: #se l'indice mid è uguale al target ritorna true
             return True
-        elif lista[mid] < target: #altrimenti cerca sia a destra che a sinistra se presente il numero
+        elif lista[mid] < numero: #altrimenti cerca sia a destra che a sinistra se presente il numero
             start = mid + 1
         else:
             end = mid - 1
