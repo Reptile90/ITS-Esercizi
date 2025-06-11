@@ -1,5 +1,4 @@
-'''Unione di Intervalli Sovrapposti
-Data una lista di intervalli chiusi rappresentati come liste di due elementi [start, end],
+'''Data una lista di intervalli chiusi rappresentati come liste di due elementi [start, end],
 scrivi una funzione merge_intervals(intervals) che restituisce una nuova lista di
 intervalli in cui tutti quelli sovrapposti sono stati fusi. Ogni intervallo soddisfa start <=
 end. La lista risultante deve essere ordinata per inizio intervallo e non devono esserci
@@ -17,18 +16,27 @@ intervals = [[1, 3], [2, 6], [8, 10], [15, 18]]
 merge_intervals(intervals) # restituisce [[1, 6], [8, 10], [15,
 18]]
 intervals = [[1, 4], [4, 5]]
-merge_intervals(intervals) # restituisce [[1, 5]]'''
+merge_intervals(intervals) # restituisce [[1, 5]]
+'''
 
 
-def merge_intervals(intervals)->list[int]:
-    
+def merge_intervals(intervals:list[int])->list[int]:
+    if not intervals or len(intervals) == 1:
+        return intervals
+    intervals.sort(key=lambda x: x[0])
 
+    merged = [intervals[0]]
 
-
-
-
+    for i in range(1, len(intervals)):
+        last_merged = merged[-1]
+        current_interval = intervals[i]
+        if current_interval[0] <= last_merged[1]:
+            last_merged[1] = max(last_merged[1], current_interval[1])
+        else:
+            merged.append(current_interval)
+    return merged
 
 intervals = [[1, 3], [2, 6], [8, 10], [15, 18]]
-print(merge_intervals(intervals)) # restituisce [[1, 6], [8, 10], [15,18]]
+print(merge_intervals(intervals)) 
 intervals = [[1, 4], [4, 5]]
-print(merge_intervals(intervals)) # restituisce [[1, 5]]
+print(merge_intervals(intervals)) 
