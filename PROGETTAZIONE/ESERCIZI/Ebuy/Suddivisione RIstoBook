@@ -1,0 +1,52 @@
+Requisiti della I fase:
+requisiti 1, 2 (no requisito 2.5., 2.7. e 2.8.), 3, 4 (no requisito 4.5.), 6
+use case 0, 1, 3, A (non registrabile come staff ancora), B, E, G, H, J (tranne per lo staff)
+
+Requisiti della II fase:
+Requisiti 2.7., 2.8, 4.5., 5 (no requisito 5.5.), 8
+use case 2, A (con anche lo staff), C, F, I, J
+
+Requisiti della III fase:
+Requisiti 2.5, 7
+Use case D
+
+
+Requisiti della IV fase:
+Requisito 1.4., 5.5.
+use case K, L
+
+
+
+
+
+
+1 fase:
+requisito 1
+requisito 2
+requisito 3
+requisito 4
+requisito 6
+
+use case 1 2 4 A (no staff),B,E,G,H,J.
+
+
+2 fase
+requisito 2.7
+requisito 2.8
+requisito 4.5
+requisito 5
+requisito 8
+
+use case 3, A(con staff)
+
+3 fase:
+Requisiti 2.5
+Requisito 7
+use case D
+
+
+4 fase
+Requisito 1.4
+requisito 5.5
+use case K,L
+

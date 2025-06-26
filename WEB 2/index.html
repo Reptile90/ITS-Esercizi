@@ -13,13 +13,23 @@
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script>
-        const elementRoot= document.querySelector("#root");
+        const elementRoot=document.querySelector("#root");
         const root=ReactDOM.createRoot(elementRoot);
+        const e=React.createElement;
+        const h1=e("h1",{
+            key:"h1",
+            style:{
+                color:"red"
+            },
+            className:"big",
+            onClick:function(el){
+                
+                console.log(el)
+            }
+        },"Primo tag H1 con react");
 
-        const h1= React.createElement("h1",{style:{ color: "red",},classname:"big",
-        onClick:(e)=>{console.log(e.target)}},"Primo tag H1 con  react");
-
-        root.render(h1);
+        
+        const main=e("main",{},[h1,ul])
+        root.render(main);
     </script>
-</body>
 </html>

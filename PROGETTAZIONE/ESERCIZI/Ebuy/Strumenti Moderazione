@@ -1,0 +1,22 @@
+Specifica dello Use Case Moderazione
+
+cancellaPost(p:PostOggetto): None
+
+	precondizioni:
+		se esiste un link(cs,u) allora non può essere invocata dall'attore
+		se p:asta:
+			se a.scadenza è <= istante l'operazione non può essere invocata dall'attore
+			
+	postcondizioni:
+		 p:Post viene eliminato il link (v,p):pubblica
+		 
+		 per ogni C in categoria:	
+		 	viene eliminato ogni link (c,p):cat_post
+		 	
+		 per ogni m in mp:
+		 	viene eliminato ogni link (m,p):met_post
+		 se p:asta:
+		 	se presenti link(b,a):asta_bid allora viene eliminato ogni link (b,a):asta_bid
+		 
+		 se p:compraloSubito:
+		 	se presenti link(cs,u):cs_ut allora viene eliminato ogni link (cs,u):cs_ut

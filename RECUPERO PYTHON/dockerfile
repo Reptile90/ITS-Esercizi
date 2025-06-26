@@ -1,0 +1,10 @@
+FROM PYTHON 3.11.11
+
+COPY python_requirements.txt /
+
+RUN pip install -r python_requirements.txt
+
+RUN mkdir /app
+
+COPY Rep3_SRealy.py /app
+WORKDIR /app

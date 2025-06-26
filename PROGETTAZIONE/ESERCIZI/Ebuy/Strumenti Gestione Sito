@@ -1,0 +1,22 @@
+Specifica dello use case GestioneSito
+
+creazione_pagamento(nome:Stringa):MetodoPagamento
+
+	precondizioni:
+		se non esiste m:metodo con m:nome = nome
+	
+	postacondizioni:
+		viene creato un oggetto m:metodoPagamento dove mp.nome = nome
+	
+	
+	
+creazione_categoria(nome:Stringa):Categoria
+
+	precondizioni:
+		se non esiste c:categoria con c:nome = nome
+		
+	postcondizioni:
+		viene creato un oggetto c:Categoria dove c.nome = nome
+		
+
+	

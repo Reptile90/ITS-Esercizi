@@ -1,0 +1,168 @@
+SPECIFICA DEGLI USE CASE
+
+UC-1 :Specifica dello use-case Registrazione:
+registra(os:Ospite, vp:VenditoreProfessionale, up:UtentePrivato)
+
+pre-condizioni:
+L'utente deve essere un (os)(non autenticato)
+
+post-condizioni:
+
+Successo: Viene creato nel sistema un nuovo account. L'utente può scegliere se registrarsi come (vp) o (up). L'utente inserisce un username univoca che sia disponibile e una password. Nel caso di (vp) inserisce anche l'URL della vetrina
+Fallimento: L'utente rimane un (os)
+
+
+
+UC-2 Specifica dello use-case PubblicaPost
+pubblica(vp:VenditoreProfessionale)
+
+pre-condizioni:
+(vp) deve essere autenticato.
+
+post-condizioni:
+Successo: Viene creato un post associato all'oggetto.
+1)(vp) sceglie di pubblicare un nuovo post, viene presentato il form per l'inserimento dei dati.
+2)Vengono inseriti i dettagli del post:
+Descrizione, Categoria e SottoCategoria e i metodi di pagamento accettati.
+3)(vp) specifica se l'oggetto è "Nuovo" o "Usato"
+Se "Nuovo" inserisce gli anni di garanzia
+Se "Usato" inserisce le condizioni e gli anni di garanzia(opzionale)
+5)(vp) può scegliere "Asta" vedi UC 2.1
+6)(VP) può scegliere "CompraloSubito" vedi UC 2.2
+Fallimento: Non viene creato nessun post
+
+
+UC 2.1 Specifica dello use-case PostAsta
+1) (vp) inserisce il prezzo iniziale
+2) (vp) inserisce il valore dei rialzi minimo
+3) (vp) inserisce d:DataOra della scadenza dell'Asta
+4) (vp) conferma la pubblicazione
+5) Viene creato un post come "Asta"
+
+UC 2.2 Specifica dello use-case PostCompraSubito
+1) (vp) inserisce il prezzo di vendita
+2) (vp) conferma la pubblicazione
+3) (vp) Viene creato un post "CompraloSubito"
+
+
+UC-3: Specifica dello use-case InviaBid
+invia(up:UtentePrivato, b:Bid)
+
+pre-condizioni:
+L'utente deve essere autenticato come (up)
+Il post deve essere un "Asta" in corso, non scaduta
+
+post-condizioni
+Successo: Un nuovo (b) associato a (up) viene registrato per l'asta e all'i:IstanteCorrente, il prezzo dell'"Asta" viene aggiornato.
+1)L'utente visualizza un Asta di suo interesse.
+2)Il sistema mostra il prezzo nell'i:IstanteCorrente
+3)L'utente invia un offerta. L'importo viene calcolato come (pa:PrezzoAttuale, pr:PrezzoRIalzi)
+4)Il sistema verifica che l'asta sia ancora attiva e che nessuno abbia fatto un offerta nel frattempo
+5)Il sistema registra il bid, associando al bd:Bidder e al i:IstanteCorrente
+6)Il sistema notifica all'utente che è il nuovo miglior offerente.
+
+Fallimento: Nessun b:Bid viene registrato.
+1)Nel caso di Asta superata il sistema informa che l'asta è scaduta e non è più possibile fare offerte
+2)Nel caso dell'offerta superata il sistema informa che un utente ha già fatto un offerta superiore e aggiorna i
+UC-4 Specifica dello use-case AcquistaCompraloSubito
+acquista(up:UtentePrivato)
+
+pre-condizioni
+
+L'utente deve essere autenticato come (up)
+Il post "CompraloSubito) è ancora disponibile
+
+post-condizioni
+
+Successo: il post viene contrassegnato come "venduto", (up) viene constrassegnato come acquirente e l'oggetto non è più disponibile
+1)(up) visualizza un post "CompraloSubito"
+2)(up) clicca sul pulsante "CompraloSubito"
+3)Viene chiesta  una conferma
+4)Viene confermato l'acquisto
+5)Il sistema verifica che l'oggetto sia ancora disponibile
+6)Il sistema registra l'utente come l'acquirente del post e l'acquisto viene concluso.
+
+
+Fallimento: L'acquisto non avviene
+1) Nel caso di oggetto non disponibile il sistema informa l'utente che l'oggetto è già stato acquistato da un altro utente
+
+
+UC-5: Specifica dello use-case PubblicaFeedback
+pubblica(up:UtentePrivato, fB:Feeback)
+
+Pre-condizioni:
+L'utente deve essere autenticato come (up)
+L'utente deve essere l'acquirente di un post CompraloSubito o il vincitore di un Asta.
+
+Post-condizioni:
+
+Successo: un nuovo (fb) viene associato al post
+1)(up)seleziona un acquisto per cui non ha lasciato un (fb)
+2)Il sistema presenta un post un form per l'inserimento del (fb)
+3)(up) inserisce un voto da 0 a 5
+4)(up) inserisce  un commento testuale(opzionale)
+5)(up) invia (fb)
+6) Il sistema salva il (fb) associandolo al post
+
+Fallimento:
+Nessun fb viene registrato.
+
+
+UC-6: Specifica dello use-case CancellaPost
+cancella(vp:VenditoreProfessionale, am:Amministratore, md:Moderatore)
+
+Pre-condizioni:
+L'utente deve essere autenticato come (vp) o (am) o (md)
+Il post da cancellare deve esistere e deve essere stato pubblicato dal venditore
+Se è un Asta, non devono esserci b:Bid
+Se è un Compralo SUbito, non deve essere stato acquistato.
+
+Post-condizioni:
+Successo: il post viene rimosso dal sistema
+1) (vp) o (am) o (md) visualizzano la lista dei post attivi
+2) (vp) o (am) o (md) selezionano l'opzione cancella post
+3) Il sistema verifica le pre_condizioni
+4) Viene chiesta una conferma
+5) (vp) o (am) o (md) confermano la cancellazione
+6) Il sistema cancella il post
+
+Fallimento:In caso di condizioni non soddisfatte il sistema informa (vp) o (am) o (md) che non è possibile cancella il post
+
+
+UC-7: Specifica dello use-case CreaCategoria:
+crea(am:Amministratore)
+
+pre-condizioni:
+L'utente deve essere autenticato come (am)
+
+post-condizioni:
+
+Successo: Viene creata e resa disponibile una nuova categoria per la classificazione dei post
+
+1)(am) accede al pannello di gestione delle categorie.
+2)(am) scegli di creare una nuova categoria
+3)(am) specifica il nome della categoria
+4)(am) specifica una categoria genitore per creare una sottocategoria (opzionale)
+5) Il sistema salva la nuova categoria
+
+
+UC-8: Specifica dello use-case CreaMetodoDiPagamento
+crea(am:Amministratore)
+
+Pre-condizioni:
+L'utente deve essere autenticato come (am)
+
+Post-condizioni:
+
+Successo: Il nuovo metodo di pagamento è disponibile per essere scelto dai venditori durante la creazione di post
+
+1) L'amministratore accede al pannello di gestione dei pagamenti.
+2) Sceglie di aggiungere un nuovo metodo
+3) Inserisce il nome del metodo di pagamento
+4) Il sistema salva il nuovo metodo
+
+
+
+
+
+
