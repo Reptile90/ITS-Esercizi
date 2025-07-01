@@ -1,0 +1,7 @@
+{'Classe Economica': 70, 'Classe Business': 20, 'Prima Classe': 10}
+{'Classe Economica': 0, 'Classe Business': 20, 'Prima Classe': 10}
+{'Classe Economica': 0, 'Classe Business': 0, 'Prima Classe': 10}
+{'Classe Economica': 0, 'Classe Business': 0, 'Prima Classe': 10}
+{'Classe Economica': 0, 'Classe Business': 0, 'Prima Classe': 0}
+200 Posti disponibili sul volo CHA456
+La compagnia ITA ha guadagnato €131997.60 con la prenotazione dei voli
