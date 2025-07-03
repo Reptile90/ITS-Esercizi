@@ -3,7 +3,7 @@ def baricentro(v: list[int])->str|bool:
     
     for i in range(len(v)):
         if sum(v[:i+1]) == sum(v[i+1:]):
-            return 
+            return i
         
     return None
             
