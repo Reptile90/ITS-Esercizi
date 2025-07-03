@@ -1,9 +1,10 @@
 def baricentro(v: list[int])->str|bool:
-    
+    cont= 0
     
     for i in range(len(v)):
+        cont += 2
         if sum(v[:i+1]) == sum(v[i+1:]):
-            return i
+            return i, cont
         
     return None
             
@@ -17,6 +18,7 @@ def printResult(v: list[int])->str:
 def baricentroOttimizzato(v: list[int]):
     tot=0
     left_sum=0
+    cont = 0
     
     for num in v:
         
@@ -24,9 +26,10 @@ def baricentroOttimizzato(v: list[int]):
     
     for i in range(len(v)):
         left_sum += v[i]
+        cont += 1
         if tot - left_sum == left_sum:
             
-            return i
+            return i,cont
     return None
         
 
