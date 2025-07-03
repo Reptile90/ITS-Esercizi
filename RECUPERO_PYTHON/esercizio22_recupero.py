@@ -142,8 +142,8 @@ if __name__ == "__main__":
 
     
     with open("report.txt", "w", encoding="utf-8") as file:
-        for line in report:
-            file.write(line + "\n")
+        for output in report:
+            file.write(output + "\n")
 
 
         
