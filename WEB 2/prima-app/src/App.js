@@ -1,5 +1,6 @@
 import React from "react";
 import ProfiloUtente from "./ProfiloUtente";
+import Form from "./form"
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -54,8 +55,11 @@ const utenti = [
           ))}
         </div>
       ))}
+      <Form></Form>
     </div>
   );
 }
+
+
 
 export default App;

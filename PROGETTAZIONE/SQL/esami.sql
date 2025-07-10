@@ -1,10 +1,22 @@
+create database esami:
+\c esami
+
+create domain posint as integer
+check(value > 0);
+
+create type indirizzo as (
+    via varchar(100),
+    cap char(5),
+    civico posint_not_null
+);
+
+
 create table docente (
     mat integer primary key,
     cognome varchar(100) not null,
     nome varchar(100) not null,
     email varchar(100)not null
-
-
+    indirizzo indirizzo not null
 );
 
 create table corso (

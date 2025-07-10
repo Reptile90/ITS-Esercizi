@@ -1,0 +1,22 @@
+Specifiche dello Use-Case Strumenti Registrazione
+
+Registra VenditoreProf(username:stringa) vetrina(username:url):VenditoreProf
+
+	Precondizione: Non esiste u:Utente con u.username = username
+	
+	Postcondizione: 
+		Viene creato e restituito l'oggeto v.venditoreProf dove :
+		v.username = username
+		v.registrazione = adesso
+		v.vetrina = vetrina
+		
+		
+		
+		Registra_Privato(username:stringa):Privato
+
+	Precondizione: Non esiste u:Utente con u.username = username
+	
+	Postcondizione: 
+		Viene creato e restituito l'oggeto p.Privato dove :
+		p.username = username
+		p.registrazione = adesso	
