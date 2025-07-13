@@ -1,6 +1,5 @@
 from typing import *
-from weakref import WeakValueDictionary, ReferenceType
-import pprint
+from weakref import WeakValueDictionary
 
 KeyType = TypeVar('KeyType')
 ValueType = TypeVar('ValueType')
@@ -13,11 +12,11 @@ class Index(Generic[KeyType, ValueType]):
 	_name:str
 	_objects:WeakValueDictionary[KeyType, ValueType]
 
-	def _init_(self, name:str):
+	def __init__(self, name:str):
 		self._name:str = name
 		self._objects:WeakValueDictionary[KeyType, ValueType] = WeakValueDictionary()
 
-	def _str_(self)->str:
+	def __str__(self)->str:
 		return (f"Index {self.name()}:\n - length: {len(self._objects)}\n - keys = {[k for k in self._objects.keys()]}")
 
 	def name(self)->str:
@@ -38,5 +37,5 @@ class Index(Generic[KeyType, ValueType]):
 	def all(self)->Generator[ValueType, None, None]:
 		return self._objects.values()
 
-	def _len_(self)->int:
+	def __len__(self)->int:
 		return len(self._objects)
