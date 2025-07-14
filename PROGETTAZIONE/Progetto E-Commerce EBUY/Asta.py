@@ -14,18 +14,24 @@ class Asta:
     def __init__(self, prezzo: RealGZ, prezzo_bid: RealGZ, pubblicazione: datetime, scadenza: datetime):
         if pubblicazione >= scadenza:
             raise ValueError("La scadenza deve essere successiva alla data di pubblicazione.")
-        self.prezzo = prezzo
-        self._prezzo_bid = prezzo_bid
-        self.pubblicazione = pubblicazione
-        self.scadenza = scadenza
+        self.prezzo:RealGZ = prezzo
+        self._prezzo_bid:RealGZ = prezzo_bid
+        self.pubblicazione:datetime = pubblicazione
+        self.scadenza:datetime = scadenza
         self.lista_bid: list['Bid'] = []
         self._link_bid: list['Asta_Bid._link'] = []
         
-        
+    
+    def set_prezzo(self, prezzo:RealGZ):
+        if self.is_scaduta() or self._link_bid:
+            raise ValueError("Non è possibile cambiare il prezzo")
+        self.prezzo = prezzo    
         
     def set_scadenza(self, scadenza:datetime)->None:
-        if self.verifica_scadenza():
+        if self.is_scaduta() or self._link_bid:
             raise ValueError ("Non è possibile inserire una nuova scadenza")
+        if scadenza < datetime.now():
+            raise AttributeError("Non è possibile inserire una scadenza minore della data di oggi")
         self.scadenza= scadenza
         
 
@@ -66,7 +72,5 @@ class Asta:
         bid_finale = self.ultimo_bid(self.scadenza)
         return bid_finale.getUtente()
     
-    def verifica_scadenza(self)->bool|str:
-        if self.is_scaduta():
-            raise AttributeError ("L'asta è scaduta, non è possibile effettuare bid")
+
         
