@@ -20,6 +20,14 @@ class Asta:
         self.scadenza = scadenza
         self.lista_bid: list['Bid'] = []
         self._link_bid: list['Asta_Bid._link'] = []
+        
+        
+        
+    def set_scadenza(self, scadenza:datetime)->None:
+        if self.verifica_scadenza():
+            raise ValueError ("Non è possibile inserire una nuova scadenza")
+        self.scadenza= scadenza
+        
 
     def aggiungi_bid(self, bid: 'Bid') -> None:
         if bid.getIstanteBid() > self.scadenza:
@@ -29,24 +37,25 @@ class Asta:
         self.lista_bid.append(bid)
 
     def prezzo_attuale(self, istante: datetime) -> RealGZ:
-        quantita = len([b for b in self.lista_bid if b.getIstanteBid() <= istante])
+        quantita = 0
+        for b in self.lista_bid:
+            if b.getIstanteBid() <= istante:
+                quantita += 1
         return RealGZ(self.prezzo + quantita * self._prezzo_bid)
 
+
     def ultimo_bid(self, istante: datetime) -> Bid | None:
-        bid_valido = [b for b in self.lista_bid if b.getIstanteBid() <= istante]
-        return max(bid_valido, key=lambda b: b.getIstanteBid()) if bid_valido else None
+        ultimo_bid_valido = None
+        for b in self.lista_bid:
+            if b.getIstanteBid() <= istante:
+                if (ultimo_bid_valido is None or b.getIstanteBid() > ultimo_bid_valido.getIstanteBid()):
+                    ultimo_bid_valido = b
+        return ultimo_bid_valido
 
     def add_link_asta_bid(self, link: 'Asta_Bid._link') -> None:
         if link.asta() is not self:
             raise ValueError("Il link non riguarda questa asta.")
         self._link_bid.append(link)
-
-    def remove_link_asta_bid(self, link: 'Asta_Bid._link') -> None:
-        if link in self._link_bid:
-            self._link_bid.remove(link)
-
-    def getLinkAstaBid(self) -> list['Asta_Bid._link']:
-        return list(self._link_bid)
 
     def is_scaduta(self) -> bool:
         return datetime.now() > self.scadenza
@@ -56,16 +65,8 @@ class Asta:
             return None
         bid_finale = self.ultimo_bid(self.scadenza)
         return bid_finale.getUtente()
-
-    def to_dict(self) -> dict:
-        return {
-            "prezzo": str(self.prezzo),
-            "prezzo_bid": str(self._prezzo_bid),
-            "pubblicazione": self.pubblicazione.isoformat(),
-            "scadenza": self.scadenza.isoformat(),
-            "scaduta": self.is_scaduta(),
-            "vincitore": self.vincitore().get_username() if self.vincitore() else None,
-            "numero_bid": len(self.lista_bid)
-        }
-
+    
+    def verifica_scadenza(self)->bool|str:
+        if self.is_scaduta():
+            raise AttributeError ("L'asta è scaduta, non è possibile effettuare bid")
         

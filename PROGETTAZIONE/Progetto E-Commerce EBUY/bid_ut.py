@@ -13,13 +13,6 @@ class Bid_Ut:
         u.add_link_bid_ut(l)
         b.add_link_bid_ut(l)
 
-    @classmethod
-    def remove(cls, l: weakref.ref[_link]) -> None:
-        link = l()
-        if link is not None:
-            link.bid().remove_link_bid_ut(link)
-            link.utente().remove_link_bid_ut(link)
-
     class _link:
         def __init__(self, utente: UtentePrivato, bid: Bid):
             self._utente = utente
