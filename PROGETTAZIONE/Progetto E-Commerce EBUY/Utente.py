@@ -12,8 +12,8 @@ class Utente(ABC):
     def __init__(self, username: str):
         if index_username.get(username) is not None:
             raise ValueError(f"Username '{username}' già esistente!")
-        self.__username = username
-        self.__registrazione = datetime.now()
+        self.__username:str = username
+        self.__registrazione:datetime = datetime.now()
         index_username.add(username, self)
 
     @abstractmethod
@@ -26,9 +26,10 @@ class Utente(ABC):
     def get_registrazione(self) -> datetime:
         return self.__registrazione
 
-    def cancella_registrazione(self) -> None:
-        index_username.remove(self.get_username())
+    def cancella_registrazione(self,username:str) -> None:
+        index_username.remove(self.get_username(username))
         print("Utente cancellato correttamente")
+        
 
     def __str__(self):
         return self.get_username()
