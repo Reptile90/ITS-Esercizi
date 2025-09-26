@@ -1,8 +1,19 @@
 import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
 
-const Navbar = ({onSetEsercizio}) => {
-    const lista_esercizi = ["Saluto", "CardUtente", "MenuRistorante", "Termostato", "CampoRicerca", "MessaggioSegreto", "AggiornaTitolo", "GalleriaFoto", "ModuloContatti", "BlogApp", "TodoApp"]
+const Navbar = ({ onSetEsercizio }) => {
+    const lista_esercizi = [
+        "Saluto",
+        "CardUtente",
+        "MenuRistorante",
+        "Termostato",
+        "CampoRicerca",
+        "MessaggioSegreto",
+        "AggiornaTitolo",
+        "GalleriaFoto",
+        "ModuloContatti",
+        "BlogApp",
+        "ToDoApp"]
 
     return (
         <div>

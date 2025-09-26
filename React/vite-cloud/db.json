@@ -1,19 +1,14 @@
 {
   "tasks": [
     {
-      "id": "1",
-      "text": "Imparare le basi di React",
+      "id": "5a63",
+      "text": "imparare le basi di React",
       "completed": true
     },
     {
-      "id": "2",
-      "text": "Fare questo esercizio",
-      "completed": true
-    },
-    {
-      "id": "4ad7",
-      "text": "imparare lo useState",
-      "completed": true
+      "id": "3603",
+      "text": "studiare Bootstrap 5",
+      "completed": false
     }
   ]
 }

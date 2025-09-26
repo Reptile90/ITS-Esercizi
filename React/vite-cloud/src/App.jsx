@@ -9,8 +9,8 @@ import AggiornaTitolo from './esercizio_7/AggiornaTitolo'
 import GalleriaFoto from './esercizio_8/GalleriaFoto'
 import ModuloContatti from './esercizio_9/ModuloContatti'
 import BlogApp from './esercizio_10/BlogApp'
-import TodoApp from './esercizio_11/TodoApp'
 import Navbar from './Navbar/Navbar'
+import ToDoApp from './ToDoApp/ToDoApp'
 
 function App() {
     const [esercizio, setEsercizio] = useState('')
@@ -37,8 +37,9 @@ function App() {
                 return <ModuloContatti></ModuloContatti>
             case "BlogApp":
                 return <BlogApp></BlogApp>
-            case "TodoApp":
-                return <TodoApp></TodoApp>
+            case "ToDoApp":
+                return <ToDoApp></ToDoApp>
+            
         }
     }
     
