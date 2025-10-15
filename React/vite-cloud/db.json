@@ -3,11 +3,16 @@
     {
       "id": "5a63",
       "text": "imparare le basi di React",
-      "completed": true
+      "completed": false
     },
     {
       "id": "3603",
       "text": "studiare Bootstrap 5",
+      "completed": false
+    },
+    {
+      "id": "219b",
+      "text": "sdasd",
       "completed": false
     }
   ]

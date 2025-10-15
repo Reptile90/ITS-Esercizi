@@ -13,7 +13,8 @@ const Navbar = ({ onSetEsercizio }) => {
         "GalleriaFoto",
         "ModuloContatti",
         "BlogApp",
-        "ToDoApp"]
+        "ToDoApp",
+        "MainComponent"]
 
     return (
         <div>

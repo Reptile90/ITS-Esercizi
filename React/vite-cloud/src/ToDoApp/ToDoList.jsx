@@ -1,7 +1,7 @@
 import React from 'react'
 import ToDoItem from './ToDoItem'
 
-const ToDoList = ({ tasks, onDeleteTask, onToggleTask }) => {
+const ToDoList = ({ tasks, onDeleteTask, onToggleTask,onUpdateTask }) => {
     return (
         <ul className="list-group">
             {
@@ -10,7 +10,8 @@ const ToDoList = ({ tasks, onDeleteTask, onToggleTask }) => {
                         key={t.id}
                         task={t}
                         onDeleteTask={onDeleteTask}
-                        onToggleTask={onToggleTask}>
+                        onToggleTask={onToggleTask}
+                        onUpdateTask={onUpdateTask}>
 
                     </ToDoItem>
 

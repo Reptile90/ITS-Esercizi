@@ -1,0 +1,5 @@
+openssl genrsa -out FAprivkey.pem -F4 2048
+
+openssl genrsa -out FAprivkey.pem -F4 2048
+
+openssl rsa -in FAprivkey.pem -text -noout 
